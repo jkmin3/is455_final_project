@@ -8,7 +8,7 @@ USE hotel_management_system;
 CREATE TABLE IF NOT EXISTS department (
   dpt_id        		INT           PRIMARY KEY   AUTO_INCREMENT,
   dpt_name      		VARCHAR(45)   NOT NULL      UNIQUE,
-  dpt_description		VARCHAR(100)  DEFAULT NULL,
+  dpt_description		VARCHAR(100)  DEFAULT NULL
 );
 
 -- populate department table with data
