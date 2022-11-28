@@ -1,13 +1,28 @@
-DROP TABLE IF EXISTS `guest` ;
 
+-- create guest table
+
+DROP TABLE IF EXISTS `guest` ;
 CREATE TABLE IF NOT EXISTS `guest` (
   `guest_id` INT NOT NULL,
-  `guest_first_name` VARCHAR(45) NULL,
   `guest_last_name` VARCHAR(45) NULL,
+  `guest_first_name` VARCHAR(45) NULL,
   `guest_contact` VARCHAR(12) NULL,
   `guest_email_add` VARCHAR(45) NULL,
   PRIMARY KEY (`guest_id`));
 
+-- populate guest table with data
+
+INSERT INTO guest(guest_id, guest_last_name, guest_first_name, guest_contact, guest_email_add) VALUES
+(1, 'Chan', 'Jacky', '1234567890', 'jackychan@gmail.com'),
+(2, 'Ma', 'Jacky', '2234567890', 'jackyma@gmail.com'),
+(3, 'Coper', 'David', '3234567890', 'davidcoper@gmail.com'),
+(4, 'Wang', 'Tom', '4234567890', 'tomwang@gmail.com'),
+(5, 'Li', 'Jerry', '5234567890', 'jerry_li@gmail.com'),
+(6, 'Liu', 'Eric', '6234567890', 'ericliu@gmail.com'),
+(7, 'Lee', 'Ann', '7234567890', 'annlee@gmail.com'),
+(8, 'Pitt', 'Brad', '8234567890', 'pittb@gmail.com'),
+(9, 'Green', 'Rachael', '9234567890', 'realrachael@gmail.com'),
+(10, 'Gellar', 'Monica', '0234567890', 'realmon@gmail.com');
 
 DROP TABLE IF EXISTS `booking` ;
 
@@ -63,8 +78,9 @@ CREATE TABLE IF NOT EXISTS `room_booked` (
     ON UPDATE NO ACTION);
 
 
-DROP TABLE IF EXISTS `hotel_service_guest` ;
+-- create hotel_service_guest table
 
+DROP TABLE IF EXISTS `hotel_service_guest` ;
 CREATE TABLE IF NOT EXISTS `hotel_service_guest` (
   `services_used_id` INT NOT NULL,
   `booking_id` INT NOT NULL,
@@ -90,3 +106,16 @@ CREATE TABLE IF NOT EXISTS `hotel_service_guest` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+-- populate hotel_service_guest table with data
+
+INSERT INTO hotel_service_guest VALUES
+(1, 1, 1, 3),
+(2, 1, 7, 6),
+(3, 2, 7, 7),
+(4, 3, 5, 10),
+(5, 5, 2, 10),
+(6, 5, 6, 10),
+(7, 7, 7, 6),
+(8, 8, 7, 5),
+(9, 8, 7, 5),
+(10, 9, 7, 7);
